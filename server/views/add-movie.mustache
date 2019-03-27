@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    {{> menu}}
+
+    <form action='/movies/add-movie' method='post'>
+      <input type='text' name='title' placeholder="Movie title"></input>
+      <input type='text' name='desc' placeholder="Movie description"></input>
+      <input type='text' name='genre' placeholder="Movie genre"></input>
+      <input type='text' name='posterURL' placeholder="Movie poster link"></input>
+      <button type='submit'>Submit</button>
+    </form>
+
+  </body>
+</html>
