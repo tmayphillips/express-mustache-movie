@@ -2,6 +2,7 @@ const bodyParser = require('body-parser')
 const express = require('express')
 const router = express.Router()
 const uuid = require('uuid')
+const path = require('path')
 
 let movies = [
 ]
@@ -40,14 +41,12 @@ router.post('/remove-movie',(req,res) => {
   res.redirect('/movies')
 })
 
-// router.get('/:genre', (req,res) => {
-//   let genre = req.params.genre
-//   movies = movies.filter((movie) => {
-//     return movie.genre == genre
-//   })
-//   res.send(console.log("genre"))
-// })
-
-
+router.get('/:genre', (req,res) => {
+    let genre = req.params.genre
+    let filteredGenre = movies.filter((movie) => {
+      return movie.genre == genre
+})
+res.render('index',{movies: filteredGenre})
+})
 
 module.exports = router
